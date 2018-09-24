@@ -12,8 +12,14 @@ export default class JobContainer extends React.Component {
 
     render() {
         const jobs = this.props.jobs;
-        if(!jobs || jobs.length === 0) {
+        if(jobs === null) {
             return null;
+        }
+
+        if(jobs.length === 0) {
+            return <div class='alert alert-info'>
+                No job postings found matching your criteria.
+            </div>;
         }
 
         let result = [];

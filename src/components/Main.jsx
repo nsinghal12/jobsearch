@@ -1,13 +1,12 @@
 import React from 'react';
 import SearchForm from './SearchForm';
 import JobContainer from './JobContainer';
-import IfClause from './IfClause';
 
 export default class Main extends React.Component {
 
     state = {
         city : null,
-        jobs : []
+        jobs : null
     }
 
     onJobs = (jobs) => {
@@ -30,9 +29,7 @@ export default class Main extends React.Component {
     render() {
         return <main>
             <SearchForm city={ this.state.city } onJobs={ this.onJobs }/>
-            <IfClause condition={ this.state.jobs && this.state.jobs.length > 0 }>
-                <JobContainer jobs={ this.state.jobs } />
-            </IfClause>
+            <JobContainer jobs={ this.state.jobs } />
         </main>;
     }
 
