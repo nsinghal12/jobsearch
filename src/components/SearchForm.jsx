@@ -21,8 +21,8 @@ export default class SearchForm extends React.Component {
     }
 
     clear = () => {
-        this.props.onJobs([]);
-        this.setState( { location : null, keywords : null });
+        this.props.onJobs(null);
+        this.setState( { location : null, keywords : '' });
     }
 
     searchJobs = () => {
